@@ -1,6 +1,6 @@
 import numpy as np
 import os
-from generators import SignalGenerator # Asumiendo tu clase SignalGenerator
+from generators import SignalGenerator
 
 def build_dataset(num_samples=1000, output_dir="data"):
     os.makedirs(f"{output_dir}/train", exist_ok=True)
