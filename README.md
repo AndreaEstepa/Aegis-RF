@@ -30,12 +30,12 @@ The system operates on complex baseband I/Q signals generated under realistic ma
 >Short-Time Fourier Transform (STFT)
 >Spectral and statistical feature extraction
 
-5.Implement unsupervised anomaly detection models:
+5. Implement unsupervised anomaly detection models:
 >Isolation Forest
 >One-Class SVM
 >Autoencoders (dense and convolutional variants)
 
-6.Evaluate performance using defense-relevant metrics:
+6. Evaluate performance using defense-relevant metrics:
 >False Alarm Rate (FAR)
 >ROC-AUC
 >Detection delay
