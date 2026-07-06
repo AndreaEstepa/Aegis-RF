@@ -30,12 +30,12 @@ The system operates on complex baseband I/Q signals generated under realistic ma
 >Short-Time Fourier Transform (STFT)
 >Spectral and statistical feature extraction
 
-5.Implement unsupervised anomaly detection models:
+5. Implement unsupervised anomaly detection models:
 >Isolation Forest
 >One-Class SVM
 >Autoencoders (dense and convolutional variants)
 
-6.Evaluate performance using defense-relevant metrics:
+6. Evaluate performance using defense-relevant metrics:
 >False Alarm Rate (FAR)
 >ROC-AUC
 >Detection delay
@@ -44,33 +44,31 @@ The system operates on complex baseband I/Q signals generated under realistic ma
 
 ## System Architecture
 The system is structured into modular layers:
-1. Signal Simulation Layer
->Digital modulation generation
->Channel modeling
->Controlled anomaly injection
+1. Signal Generator
+>High-fidelity simulation of digital modulations (BPSK, QPSK, QAM) and controlled channel degradation (AWGN, fading).
 
-2. Preprocessing Layer
->Signal normalization
->Temporal segmentation
->Time-frequency transformation (STFT)
+2. Signal Processor
+>Real-time feature extraction using Short-Time Fourier Transform (STFT) to convert complex I/Q data into time-frequency representations.
 
-3. Feature & Modeling Layer
->Spectral and statistical feature extraction
->Unsupervised model training
->Anomaly scoring
+3. Anomaly Detector
+>Deep learning-based unsupervised engine (Autoencoder) that learns the "normal" spectral footprint and identifies deviations based on reconstruction error (MSE).
 
-4. Evaluation Layer
->Statistical performance analysis
->Robustness testing under varying SNR
->Model comparison and benchmarking
+4. Evaluation Engine
+>Metrics-focused suite measuring Probability of Detection (Pd) vs. False Alarm Rate (Pfa) under varying SNR scenarios.
 
 
 ## Key Differentiators
->Explicit mathematical modeling of complex RF signals.
->Fully parameterizable and reproducible synthetic dataset generation.
->Clear separation between physical signal simulation and anomaly detection modeling.
->Emphasis on metrics critical for defense systems (minimizing false alarms).
->Designed with potential edge/embedded deployment in mind.
+>Defense-Oriented Metrics: Focus on robust performance under low-SNR conditions.
+>Modular Pipeline: Easily swappable models and signal generators.
+>Edge-Ready Design: Architected for potential deployment on embedded hardware (FPGA/SoC) for real-time tactical surveillance.
+
+
+## Performance Analysis
+he system evaluates performance using:
+1. ROC-AUC Curves
+>Visualizing detection capability across different noise floors.
+2. Reconstruction MSE
+>Using the Mean Squared Error of the autoencoder to define the anomaly threshold.
 
 
 ## Technologies
